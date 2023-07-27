@@ -1,9 +1,11 @@
 
     <div class="bg-footer py-6 w-full">
         <div class="max-w-6xl mx-auto flex sm:flex-row flex-col justify-between sm:space-x-6 space-x-0 sm:space-y-0 space-y-6 px-4 py-2">
-            <div class="flex flex-col space-y-3 text-white sm:w-5/12 w-full">
+            <div class="flex flex-col space-y-3 text-white sm:w-8/12 w-full">
                 <h2 class="font-semibold">About us</h2>
-                <p class="text-xs">{{$footer->deskripsi}}</p>
+                <a class="text-xs">{{$footer->deskripsi}}</a>
+                {{-- <p class="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus doloribus officiis distinctio voluptate quo eius cupiditate quos odio quod, facere quibusdam fugit totam eos, optio corrupti sunt labore deleniti a.</p> --}}
+                {{-- <p class="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus doloribus officiis distinctio voluptate quo eius cupiditate quos odio quod, facere quibusdam fugit totam eos, optio corrupti sunt labore deleniti a.</p> --}}
 
             </div>
             <div class="flex flex-col space-y-3  sm:w-4/12 w-full">

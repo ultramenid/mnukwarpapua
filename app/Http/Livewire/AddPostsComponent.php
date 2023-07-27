@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Intervention\Image\ImageManager;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Str;
 
 class AddPostsComponent extends Component
 {
@@ -30,6 +31,7 @@ class AddPostsComponent extends Component
             DB::table('posts')->insert([
                 'img' => $this->uploadImage(),
                 'title' => $this->title,
+                'slug' => Str::slug($this->title,'-'),
                 'deskripsi' => $this->deskripsi,
                 'content' => $this->content,
                 'publishdate' => $this->publishdate,

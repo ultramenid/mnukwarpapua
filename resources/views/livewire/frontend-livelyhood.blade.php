@@ -1,21 +1,37 @@
 <div class=" max-w-6xl mx-auto py-6 ">
-    <div class=" grid grid-flow-row md:grid-cols-3 grid-cols-1 gap-4  ">
+    <div class=" flex sm:flex-row flex-col sm:space-x-10 space-x-0 sm:space-y-0 space-y-10   sm:px-0 px-4">
         @if ($livelyhood)
             @foreach ($livelyhood as $item)
 
-                <div class="bg-gray-100 pb-6 w-full">
-                    <img class="w-96 h-52 object-cover object-center" src="{{ asset('storage/files/photos/'.$item->img) }}" alt="{{$item->title}}" />
-                    <h1 class="mt-6 md:text-2xl text-xl font-bold  text-auriga-biru px-4">{{$item->title}}</h1>
-                    <div class="flex space-x-1 items-center mt-6 px-4">
-                        <h5 class="font-bold ">
-                            @php
-                                $date = \Carbon\Carbon::now('Asia/Jakarta')->locale('id');
+                <div class="bg-gray-100 pb-6 sm:w-4/12">
+                    <img class="w-full h-60 object-cover object-center mb-6" src="{{ asset('storage/files/photos/'.$item->img) }}" alt="{{$item->title}}" />
+                    <div class="px-4">
+                        <a href="{{ url('livelihood', [$item->id, $item->slug]) }}" class=" md:text-2xl text-xl font-bold mt-6">{{$item->title}}</a>
+                        <div class="mt-6">
+                            <h1 class="sm:text-base text-sm">
+                            <span class="font-bold ">
+                                @php
+                                $date = \Carbon\Carbon::parse($item->publishdate)->locale('id');
                                 $date->settings(['formatFunction' => 'translatedFormat']);
-                                echo $date->format('F Y');
-                            @endphp
-                        </h5><span> | </span><h5>{{$item->deskripsi}}</h5>
+                                echo $date->format('d F Y');
+                                @endphp
+                            </span>
+                            <span> | </span>
+                            {{$item->deskripsi}}
+                            </h1>
+
+                        </div>
                     </div>
+
                 </div>
+
+
+
+
+
+
+
+
 
             @endforeach
 

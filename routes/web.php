@@ -32,6 +32,7 @@ Route::get('/livelihood', [PostsController::class, 'frontendLivelihood'])->name(
 Route::get('/foto', [MediaController::class, 'frontendFoto'])->name('foto');
 Route::get('/video', [MediaController::class, 'frontendVideo'])->name('video');
 Route::get('/contact', [InboxController::class, 'contact'])->name('contact');
+Route::get('/livelihood/{id}/{slug}', [PostsController::class, 'detail']);
 
 
 //backend

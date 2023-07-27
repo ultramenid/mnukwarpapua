@@ -29,7 +29,7 @@
                     <a class=" block px-4 py-2  text-sm font-semibold bg-transparent  dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus: dark-mode:hover: dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('risetdankajian')}}">Riset dan Kajian</a>
                 </div>
                 <div class="  bg-white shadow dark-mode:bg-gray-800">
-                    <a class=" block px-4 py-2  text-sm font-semibold bg-transparent  dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus: dark-mode:hover: dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('livelihood')}}">Livelyhood</a>
+                    <a class=" block px-4 py-2  text-sm font-semibold bg-transparent  dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus: dark-mode:hover: dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('livelihood')}}">Livelihood</a>
                 </div>
                 </div>
 
@@ -87,9 +87,9 @@
                         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open1, 'rotate-0': !open1}" class="inline w-6 h-6 text-white items-center mt-1 ml-1 transition-transform duration-200 transform "><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </div>
                     <div class="bg-white px-4 py-3 mb-4 flex flex-col space-y-2 rounded" x-show="open1" style="display: none !important;">
-                            <a href="" class=" mr-6 ">Visi dan Misi</a>
+                            <a href="{{ route('visimisi')}}" class=" mr-6 ">Visi dan Misi</a>
                             <hr>
-                            <a href="#" class=" mr-6 ">Staff</a>
+                            <a href="{{ route('staff')}}" class=" mr-6 ">Staff</a>
                     </div>
                     <p class="border-b border-gray-300"></p>
                 </div>
@@ -99,9 +99,9 @@
                         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open1, 'rotate-0': !open1}" class="inline w-6 h-6 text-white items-center mt-1 ml-1 transition-transform duration-200 transform "><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </div>
                     <div class="bg-white px-4 py-3 mb-4 flex flex-col space-y-2 rounded" x-show="open1" style="display: none !important;">
-                            <a href="#" class=" mr-6 ">Riset dan Kajian</a>
+                            <a href="{{ route('risetdankajian')}}" class=" mr-6 ">Riset dan Kajian</a>
                             <hr>
-                            <a href="#" class=" mr-6 ">Livelyhood</a>
+                            <a href="{{ route('livelihood')}}" class=" mr-6 ">Livelihood</a>
                     </div>
                     <p class="border-b border-gray-300"></p>
                 </div>
@@ -111,15 +111,15 @@
                         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open1, 'rotate-0': !open1}" class="inline w-6 h-6 text-white items-center mt-1 ml-1 transition-transform duration-200 transform "><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </div>
                     <div class="bg-white px-4 py-3 mb-4 flex flex-col space-y-2 rounded" x-show="open1" style="display: none !important;">
-                            <a href="#" class=" mr-6 ">Foto</a>
+                            <a href="{{ route('foto')}}" class=" mr-6 ">Foto</a>
                             <hr>
-                            <a href="#" class=" mr-6 ">Video</a>
+                            <a href="{{ route('video')}}" class=" mr-6 ">Video</a>
                     </div>
                     <p class="border-b border-gray-300"></p>
                 </div>
 
                 <div class=" px-6">
-                    <a href="#"  class="mb-4 px-4 inline-block  leading-5 text-white  ">Contact us<a>
+                    <a href="{{ route('contact')}}"  class="mb-4 px-4 inline-block  leading-5 text-white  ">Contact us<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
             </div>

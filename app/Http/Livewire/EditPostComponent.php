@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Intervention\Image\ImageManager;
+use Illuminate\Support\Str;
 
 class EditPostComponent extends Component
 {
@@ -51,6 +52,7 @@ class EditPostComponent extends Component
                 ->update([
                     'img' => $name,
                     'title' => $this->title,
+                    'slug' => Str::slug($this->title,'-'),
                     'deskripsi' => $this->deskripsi,
                     'content' => $this->content,
                     'publishdate' => $this->publishdate,

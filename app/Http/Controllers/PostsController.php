@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
@@ -37,5 +38,20 @@ class PostsController extends Controller
         $title = 'Livelihood';
         $nav = 'programs';
         return view('frontends.livelihood', compact('title', 'nav'));
+    }
+
+    public function getDetail($id,$slug){
+        return DB::table('posts')->where('id', $id)->where('slug' , $slug)->first();
+    }
+
+    public function detail($id, $slug){
+        // dd($this->getDetail($id, $slug)->title);
+        if(!$this->getDetail($id, $slug)){ return abort(404); };
+
+        $data = $this->getDetail($id, $slug);
+        $title = $this->getDetail($id, $slug)->title;
+        $nav = 'programs';
+
+        return view('frontends.detail', compact('title', 'nav', 'data'));
     }
 }
