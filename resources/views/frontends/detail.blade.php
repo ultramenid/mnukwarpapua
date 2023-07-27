@@ -18,7 +18,7 @@
                 echo $date->format('d F Y');
             @endphp
         </div>
-        <img src="{{asset('/storage/files/photos/'.$data->img)}}" alt="{{$data->title}}" class="w-full h-101 object-cover object-center">
+        <img src="{{asset('/storage/files/photos/'.$data->img)}}" alt="{{$data->title}}" class="w-full sm:h-101 h-48 object-cover object-center">
 
         <div class="max-w-3xl mx-auto prose mt-12 font-sans">
             {!! $data->content !!}

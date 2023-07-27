@@ -1,4 +1,3 @@
- {{-- hero --}}
  <div class="h-64 relative ">
     <div class="absolute bg-black z-20 w-full h-full opacity-40">   </div>
     <div class=" z-30 text-white text-center">
