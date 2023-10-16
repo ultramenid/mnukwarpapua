@@ -4,9 +4,9 @@
             @foreach ($video as $item)
 
                 <div class="bg-gray-100 pb-6 w-full">
-                    <video class="w-full h-60  object-cover object-center video-bg" controls>
-                        <source src="{{ asset('storage/files/photos/video/'.$item->video) }}" type="video/mp4">
-                    </video>
+                    <div class="aspect-w-16 aspect-h-9 mb-4">
+                        <iframe src="{{$item->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                     <h1 class="mt-6 md:text-2xl text-xl font-bold  text-auriga-biru px-4">{{$item->title}}</h1>
                         <div class="px-4 mt-4">
                             <h1 class="sm:text-base text-sm">

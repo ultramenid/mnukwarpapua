@@ -54,4 +54,14 @@ class PostsController extends Controller
 
         return view('frontends.detail', compact('title', 'nav', 'data'));
     }
+
+    public function risetdankajian($id, $slug){
+        if(!$this->getDetail($id, $slug)){ return abort(404); };
+
+        $data = $this->getDetail($id, $slug);
+        $title = $this->getDetail($id, $slug)->title;
+        $nav = 'programs';
+
+        return view('frontends.detailrisetdankajian', compact('title', 'nav', 'data'));
+    }
 }

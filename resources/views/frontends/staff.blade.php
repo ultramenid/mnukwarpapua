@@ -17,8 +17,8 @@
                         </div>
                         <div class="flex flex-col space-y-2 w-7/12">
                             <div class="flex space-x-1 items-center">
-                                <h1 class="text-2xl font-semibold">{{$item->nama}},</h1>
-                                <h2 class="text-2xl font-normal">{{$item->posisi}}</h2>
+                                <h1 class="text-xl font-semibold">{{$item->nama}},</h1>
+                                <h2 class="text-base font-normal">{{$item->posisi}}</h2>
                             </div>
                             <p class="text-sm">
                                 {{$item->deskripsi}}

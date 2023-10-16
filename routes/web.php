@@ -33,6 +33,7 @@ Route::get('/foto', [MediaController::class, 'frontendFoto'])->name('foto');
 Route::get('/video', [MediaController::class, 'frontendVideo'])->name('video');
 Route::get('/contact', [InboxController::class, 'contact'])->name('contact');
 Route::get('/livelihood/{id}/{slug}', [PostsController::class, 'detail']);
+Route::get('/risetdankajian/{id}/{slug}', [PostsController::class, 'risetdankajian']);
 
 
 //backend

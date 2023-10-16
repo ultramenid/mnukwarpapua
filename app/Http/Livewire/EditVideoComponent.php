@@ -11,12 +11,12 @@ use Livewire\WithFileUploads;
 class EditVideoComponent extends Component
 {
     use WithFileUploads;
-    public $uvideo, $video, $title, $deskripsi, $publishdate, $category, $status, $idVideo;
+    public $code, $title, $deskripsi, $publishdate, $category, $status, $idVideo;
     public function mount($id){
         $this->idVideo = $id;
         $data = DB::table('video')->where('id', $id)->first();
 
-        $this->uvideo = $data->video;
+        $this->code = $data->video;
         $this->title = $data->title;
         $this->deskripsi = $data->deskripsi;
         $this->publishdate = $data->publishdate;
@@ -24,25 +24,14 @@ class EditVideoComponent extends Component
         $this->status = $data->status;
 
     }
-    public function uploadVideo(){
-        $file = $this->video->store('public/files/photos/video');
-        $foto = $this->video->hashName();
-
-        return $foto;
-    }
     public function storeVideo(){
         if($this->manualValidation()){
-            if(!$this->video){
-                $name = $this->uvideo;
-            }else{
-                Storage::delete('public/files/photos/video/'.$this->uvideo);
-                $name =  $this->uploadImage();
-            }
+
             DB::table('video')
                 ->where('id', $this->idVideo)
                 ->update([
                     'title' => $this->title,
-                    'video' => $name,
+                    'video' => $this->code,
                     'deskripsi' => $this->deskripsi,
                     'publishdate' => $this->publishdate,
                     'status' => $this->status,
@@ -75,8 +64,8 @@ class EditVideoComponent extends Component
             $type = 'error'; //error, success
             $this->emit('toast',$message, $type);
             return;
-        }elseif(strlen($this->deskripsi) > 120){
-            $message = 'Deskripsi tidak boleh lebih dari 120 karakter.';
+        }elseif(strlen($this->deskripsi) > 160){
+            $message = 'Deskripsi tidak boleh lebih dari 160 karakter.';
             $type = 'error'; //error, success
             $this->emit('toast',$message, $type);
             return;

@@ -58,13 +58,10 @@
                             </td>
 
 
-                            <td class=" py-4 break-words text-sm font-bold text-newgray-700 dark:text-gray-300  ">
-                                <div class="px-4 items-center flex ">
-                                    <video class="w-full h-full " controls>
-                                        <source src="{{ asset('storage/files/photos/video/'.$item->video) }}" type="video/mp4">
-                                    </video>
+                            <td class=" py-4 break-words text-sm font-bold text-newgray-700 dark:text-gray-300  hidden sm:block">
+                                <div class="aspect-w-16 aspect-h-9 mb-4">
+                                    <iframe src="{{$item->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
-
                             </td>
 
                             <td class=" py-4 break-words text-sm text-center font-bold text-newgray-700 dark:text-gray-300">

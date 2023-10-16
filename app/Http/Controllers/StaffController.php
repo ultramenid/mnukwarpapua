@@ -27,7 +27,7 @@ class StaffController extends Controller
     }
 
     public function getStaff(){
-        return DB::table('staff')->select('nama', 'foto', 'deskripsi', 'posisi')->where('status', 1)->orderByDesc('id')->get();
+        return DB::table('staff')->select('nama', 'foto', 'deskripsi', 'posisi')->where('status', 1)->orderBy('id', 'asc')->get();
     }
     public function frontEndIndex(){
         $title = 'Staff';

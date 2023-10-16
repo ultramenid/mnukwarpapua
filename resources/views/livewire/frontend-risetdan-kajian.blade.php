@@ -5,7 +5,7 @@
 
                 <div class="bg-gray-100 pb-6 w-full">
                     <img class="w-full h-60 object-cover object-center" src="{{ asset('storage/files/photos/'.$item->img) }}" alt="{{$item->title}}" />
-                    <h1 class="mt-6 md:text-2xl text-xl font-bold  text-auriga-biru px-4">{{$item->title}}</h1>
+                    <a href="{{ url('risetdankajian', [$item->id, $item->slug]) }}" class="mt-6 md:text-2xl text-xl font-bold  text-auriga-biru px-4">{{$item->title}}</a>
                         <div class="px-4 mt-4">
                             <h1 class="sm:text-base text-sm">
                             <span class="font-bold ">

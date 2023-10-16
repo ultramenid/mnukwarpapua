@@ -53,37 +53,17 @@
             </div>
         </div>
         <div class="sm:col-span-9 col-span-12 " >
-            <div class="w-full border border-gray-300 dark:border-opacity-20 rounded px-6 py-6 mb-6">
-                <h1 class="text-2xl font-semibold  text-newbg-newgray-900 dark:text-gray-300 mb-6">Video </h1>
-                <div class="flex items-center justify-center px-2 py-2 border border-dashed border-gray-400 rounded" x-data="{ isUploading: false, progress: 0 }" x-on:livewire-upload-start="isUploading = true" x-on:livewire-upload-finish="isUploading = false; progress = 5" x-on:livewire-upload-error="isUploading = false" x-on:livewire-upload-progress="progress = $event.detail.progress">
-                    <label class="cursor-pointer">
-                        @if (! $video )
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-400 mx-auto" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
-                          </svg>
-                        @else
-                            <video class=" mx-auto sm:h-96 h-full w-full rounded " controls>
-                                <source src="{{$video->temporaryUrl()}}" type="video/mp4">
-                            </video>
-                        @endif
-                        <input type='file' class="hidden" wire:model='video' accept="video/*" />
-                        <p wire:loading.remove wire:target="video" class="text-xs text-center text-gray-400 mt-2">Clik to upload Video</p>
-                        <div x-show.transition="isUploading" class="progress progress-sm mt-2 rounded flex justify-center">
-                            <span class="text-xs text-black dark:text-white" x-text="'Uploading ' + progress + '%'"></span>
-                    </div>
-                    </label>
-                </div>
-            </div>
 
-
-
-            {{-- tab indonesia --}}
                 <div class="w-full border border-gray-300 dark:border-opacity-20 rounded px-6 py-6 mb-6" x-data="{count:0}">
                     <h1 class="text-2xl font-semibold  text-newbg-newgray-900 dark:text-gray-300 mb-4">Title</h1>
                     <input maxlength="120" x-ref="countme" x-on:keyup="count = $refs.countme.value.length" type="text" class="bg-gray-100 dark:bg-newgray-700 text-newgray-700 dark:text-gray-300 rounded w-full border  py-2 px-4 focus:outline-none border-gray-300 dark:border-opacity-20"  wire:model.defer='title' placeholder="Title. . . ">
                     <div class="flex justify-end text-newgray-700 dark:text-gray-500  italic text-xs mt-2">
                         <span x-html="count"></span> / <span  x-html="$refs.countme.maxLength"></span>
                       </div>
+                </div>
+                <div class="w-full border border-gray-300 dark:border-opacity-20 rounded px-6 py-6 mb-6" x-data="{count:0}">
+                    <h1 class="text-2xl font-semibold  text-newbg-newgray-900 dark:text-gray-300 mb-4">Code</h1>
+                    <input  type="text" class="bg-gray-100 dark:bg-newgray-700 text-newgray-700 dark:text-gray-300 rounded w-full border  py-2 px-4 focus:outline-none border-gray-300 dark:border-opacity-20"  wire:model.defer='code' placeholder="Title. . . ">
                 </div>
                 <div class="w-full border border-gray-300 dark:border-opacity-20 rounded px-6 py-6 mb-6" x-data="{count:0}">
                     <h1 class="text-2xl font-semibold  text-newbg-newgray-900 dark:text-gray-300 mb-4">Description</h1>

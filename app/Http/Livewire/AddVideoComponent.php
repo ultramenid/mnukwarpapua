@@ -10,20 +10,15 @@ use Livewire\WithFileUploads;
 class AddVideoComponent extends Component
 {
     use WithFileUploads;
-    public $video, $title, $deskripsi, $publishdate, $category, $status = 0;
+    public $code, $title, $deskripsi, $publishdate, $category, $status = 0;
 
-    public function uploadVideo(){
-        $file = $this->video->store('public/files/photos/video');
-        $foto = $this->video->hashName();
 
-        return $foto;
-    }
 
     public function storeVideo(){
         if($this->manualValidation()){
             DB::table('video')->insert([
                 'title' => $this->title,
-                'video' => $this->uploadVideo(),
+                'video' => $this->code,
                 'deskripsi' => $this->deskripsi,
                 'publishdate' => $this->publishdate,
                 'status' => $this->status,
@@ -39,7 +34,7 @@ class AddVideoComponent extends Component
         return view('livewire.add-video-component');
     }
     public function manualValidation(){
-        if($this->video == ''){
+        if($this->code == ''){
             $message = 'Video harus diisi.';
             $type = 'error'; //error, success
             $this->emit('toast',$message, $type);
@@ -59,8 +54,8 @@ class AddVideoComponent extends Component
             $type = 'error'; //error, success
             $this->emit('toast',$message, $type);
             return;
-        }elseif(strlen($this->deskripsi) > 120){
-            $message = 'Deskripsi tidak boleh lebih dari 120 karakter.';
+        }elseif(strlen($this->deskripsi) > 160){
+            $message = 'Deskripsi tidak boleh lebih dari 160 karakter.';
             $type = 'error'; //error, success
             $this->emit('toast',$message, $type);
             return;
