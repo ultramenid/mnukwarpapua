@@ -52,7 +52,7 @@
             <p class="mt-6 max-w-3xl mx-auto sm:text-base text-sm">{{$foto->deskripsi}}</p>
             <p class="mt-6 max-w-4xl  mx-auto bg-white px-2 py-2">
                 <img src="{{ asset('/storage/files/photos/'.$foto->foto) }}" alt="headline" class="w-full  sm:h-106 h-60 object-cover object-center ">
-                <p class="font-light text-xs italic mt-4 max-w-3xl mx-auto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur esse perferendis natus dignissimos amet ipsam, cupiditate accusantium hic tenetur minus cum aliquam architecto nesciunt minima consequuntur aliquid omnis similique voluptatibus.</p>
+                {{-- <p class="font-light text-xs italic mt-4 max-w-3xl mx-auto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur esse perferendis natus dignissimos amet ipsam, cupiditate accusantium hic tenetur minus cum aliquam architecto nesciunt minima consequuntur aliquid omnis similique voluptatibus.</p> --}}
             </p>
 
             <div class=" grid md:grid-cols-3 grid-cols-1 gap-4 mt-32 ">
